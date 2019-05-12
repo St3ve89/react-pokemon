@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Pokecard from './Pokecard';
+import './Pokedex.css'
 
 class Pokedex extends Component {
   static defaultProps = {
@@ -19,9 +20,11 @@ class Pokedex extends Component {
     return (
       <div className="pokedex">
         <h1>Pokedex!</h1>
-        {pokemons.map(p => (
-          <Pokecard id={p.id} name={p.name} type={p.type} exp={p.base_experience}/>
-        ))}
+        <div className="pokedex-cards">
+          {pokemons.map(p => (
+            <Pokecard id={p.id} name={p.name} type={p.type} exp={p.base_experience}/>
+          ))}
+        </div>
       </div>
     )
   }
